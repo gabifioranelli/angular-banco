@@ -1,0 +1,49 @@
+<div class="container">
+    <div class="row">
+        <div class="col mt-3">
+             <a class="btn btn-warning" [routerLink]="['']">Voltar</a>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col">
+            <h1 class="mt-2">Cadastrar novos alunos</h1>
+            <form>
+                <div class="row">
+                    <div class="form-group col-md-7">
+                        <label for="nome">Nome</label>
+                        <input class="form-control" type="text" id=nome name="nome" placeholder="Nome Sobrenome"
+                             required [(ngModel)]="alNome">
+                    </div>
+                    <div class="form-group col-md-2">
+                        <label for="idade">Idade</label>
+                        <input class="form-control" type="number" id="idade" name="idade" placeholder="10"
+                             required min="0" max="99" [(ngModel)]="alIdade">
+                    </div>
+                    <div class="form-group col-md-3">
+                        <label for="sala">Sala</label>
+                        <select class="form-control" name="sala" id="sala" required  [(ngModel)]="alSala">
+                            <option value="" selected disabled>Selecione a turma</option>
+                            <option value="6A">6A</option>
+                            <option value="6B">6B</option>
+                            <option value="7A">7A</option>
+                            <option value="7B">7B</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="form-group col-md-3">
+                        <label for="identificacao">Identificação do aluno(R.A/R.M)</label>
+                        <input class="form-control" type="text" id="identificacao" name="identificacao" placeholder="12312" required [(ngModel)]="alIdent">
+                    </div>
+                    <div class="form-group col-md-5">
+                        <label for="pais">Nome do responsável</label>
+                        <input class="form-control" type="text" id="pais" name="pais"
+                            required [(ngModel)]="alResp">
+                    </div>
+                </div>
+
+                <button class="btn btn-primary" id="enviar" type="button" (click)="save()" [routerLink]="''">Enviar</button>
+            </form>
+        </div>
+    </div>
+</div>
